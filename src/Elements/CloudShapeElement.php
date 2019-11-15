@@ -4,7 +4,7 @@
 namespace Ipssi\Evaluation\Elements;
 
 
-class CloudFormElement extends FormElement
+class CloudShapeElement extends ShapeElement
 {
 
 }

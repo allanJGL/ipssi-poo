@@ -4,7 +4,7 @@
 namespace Ipssi\Evaluation\Elements;
 
 
-class FormElement extends Element
+class ShapeElement extends Element
 {
     private $color;
 

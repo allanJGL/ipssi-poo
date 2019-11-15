@@ -4,7 +4,7 @@
 namespace Ipssi\Evaluation\Elements;
 
 
-class StarFormElement extends FormElement
+class StarShapeElement extends ShapeElement
 {
 
 }
