@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Ipssi\Evaluation;
+namespace Ipssi\Evaluation\Exceptions;
 
 
 class InvalidDataException extends IpssiEvalException
