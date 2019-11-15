@@ -4,6 +4,7 @@ require_once('vendor/autoload.php');
 
 use Ipssi\Evaluation\InvalidIndexException;
 use Ipssi\Evaluation\InvalidParametersException;
+use Ipssi\Evaluation\InvalidDivisorException;
 
 $climate = new League\CLImate\CLImate;
 $endProcess = false;
@@ -23,20 +24,25 @@ do {
     $index = $input->prompt();
 
     $input = $climate->input("Entrez le diviseur : ");
-    $diviseur = $input->prompt();
+    $divisor = $input->prompt();
 
     try {
-        if (!is_numeric($index) || !is_numeric($diviseur)) {
-            throw new InvalidParametersException(array($index, $diviseur));
+        if (!is_numeric($index) || !is_numeric($divisor)) {
+            throw new InvalidParametersException(array($index, $divisor));
         }
-        if ($index > 9) {
+        if ($index > 9 || $index < 0) {
             throw new InvalidIndexException($index);
         }
-        $climate->output("Le résultat de la division est : " . (new Diviseur())->division($index, $diviseur));
+        if (intval($divisor) === 0) {
+            throw new InvalidDivisorException($divisor);
+        }
+        $climate->output("Le résultat de la division est : " . (new Diviseur())->division($index, $divisor));
         $endProcess = true;
     } catch (InvalidParametersException $e) {
         echo $e->getMessage();
     } catch (InvalidIndexException $e) {
+        echo $e->getMessage();
+    } catch (InvalidDivisorException $e) {
         echo $e->getMessage();
     }
 } while ($endProcess !== true);
