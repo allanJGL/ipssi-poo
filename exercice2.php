@@ -1,7 +1,11 @@
 <?php
 
 require_once('vendor/autoload.php');
+use Ipssi\Evaluation\Document;
+use Ipssi\Evaluation\Elements\TextElement;
 
-use Ipssi\Evaluation\Useless;
+$textElement1 = new TextElement("test", array(1,1), "fff");
+$listElement1 = array($textElement1);
+$doc1 = new Document($listElement1, "fff");
 
-new Useless(); // Ceci ne sert à rien
+echo $doc1->__toString();
