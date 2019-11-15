@@ -2,9 +2,9 @@
 
 require_once('vendor/autoload.php');
 
-use Ipssi\Evaluation\InvalidIndexException;
-use Ipssi\Evaluation\InvalidParametersException;
-use Ipssi\Evaluation\InvalidDivisorException;
+use Ipssi\Evaluation\Exceptions\InvalidIndexException;
+use Ipssi\Evaluation\Exceptions\InvalidParametersException;
+use Ipssi\Evaluation\Exceptions\InvalidDivisorException;
 
 $climate = new League\CLImate\CLImate;
 $endProcess = false;
