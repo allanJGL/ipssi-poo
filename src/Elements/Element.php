@@ -17,6 +17,6 @@ class Element
 
     public function __toString()
     {
-        return PHP_EOL . $this->name . " is in x = " . $this->position[0] . ", y = " . $this->position[1];
+        return PHP_EOL . get_class($this) . " : " . $this->name . " is in x = " . $this->position[0] . ", y = " . $this->position[1];
     }
 }

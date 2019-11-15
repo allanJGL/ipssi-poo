@@ -4,7 +4,7 @@
 namespace Ipssi\Evaluation\Elements;
 
 
-class TextElement extends Element
+class FormElement extends Element
 {
     private $color;
 
@@ -16,7 +16,7 @@ class TextElement extends Element
 
     public function __toString()
     {
-        return parent::__toString() . " it's color code is : " . $this->color;
+        return parent::__toString() . ", it's color code is : " . $this->color;
     }
 
     /**

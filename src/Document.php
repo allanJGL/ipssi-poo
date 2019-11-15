@@ -30,4 +30,12 @@ class Document
         return "This document's color is : " . $this->backgroundColor . " and its elements are : " . $this->displayElements();
     }
 
+    /**
+     * @param string $backgroundColor
+     */
+    public function setBackgroundColor(string $backgroundColor): void
+    {
+        $this->backgroundColor = $backgroundColor;
+    }
+
 }
