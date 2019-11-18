@@ -6,18 +6,21 @@ namespace Ipssi\Bibliotheque;
 
 class Book
 {
-    private $name;
+    private $title;
+    private $author;
+
     private $lend = null;
 
-    public function __construct(string $name)
+    public function __construct(string $name, string $author)
     {
-        $this->name = $name;
+        $this->title = $name;
+        $this->author = $author;
     }
 
     /**
      * @param mixed $lend
      */
-    public function setLend($lend): void
+    public function setLend(?Lend $lend): void
     {
         $this->lend = $lend;
     }
@@ -27,24 +30,14 @@ class Book
      */
     public function getName(): string
     {
-        return $this->name;
-    }
-
-    /**
-     * @param string $name
-     */
-    public function setName(string $name): void
-    {
-        $this->name = $name;
+        return $this->title;
     }
 
     /**
      * @return mixed
      */
-    public function getLend()
+    public function getLend(): ?Lend
     {
         return $this->lend;
     }
-
-
 }

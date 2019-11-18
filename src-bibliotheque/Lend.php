@@ -14,7 +14,7 @@ class Lend
     {
         $this->adherent = $adherentName;
         $this->book = $bookName;
-        $this->date = $date;
+        $this->date = $date->modify('+14 day');
     }
 
     /**
@@ -26,11 +26,11 @@ class Lend
     }
 
     /**
-     * @param Adherent $adherent
+     * @param \DateTime $date
      */
-    public function setAdherent(Adherent $adherent): void
+    public function setDate(\DateTime $date): void
     {
-        $this->adherent = $adherent;
+        $this->date = $date;
     }
 
     /**
@@ -42,26 +42,10 @@ class Lend
     }
 
     /**
-     * @param Book $book
-     */
-    public function setBook(Book $book): void
-    {
-        $this->book = $book;
-    }
-
-    /**
      * @return \DateTimeInterface
      */
     public function getDate(): \DateTimeInterface
     {
         return $this->date;
-    }
-
-    /**
-     * @param \DateTimeInterface $date
-     */
-    public function setDate(\DateTimeInterface $date): void
-    {
-        $this->date = $date;
     }
 }
